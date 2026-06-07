@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>저스트영</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>저스트영 JUSTYOUNG — Street Wear</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- CSS (reset 먼저, 그 위에 style 적용) -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- SCRIPT -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -28,24 +32,27 @@
             pagination: {
                     el: ".swiper-pagination",
                 },
+            navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
             });
         })
     </script>
     <header>
+        <!-- 상단 프로모 마퀴 (네온 흐르는 텍스트, 끊김 없게 동일 세트 2회 반복) -->
+        <div class="promo-marquee">
+            <div class="marquee-track" aria-hidden="true">
+                <span>JUST YOUNG STREET WEAR</span><span>✦</span><span>NEW DROP</span><span>✦</span><span>FREE SHIPPING OVER ₩50,000</span><span>✦</span><span>BLACK SALE −30%</span><span>✦</span>
+                <span>JUST YOUNG STREET WEAR</span><span>✦</span><span>NEW DROP</span><span>✦</span><span>FREE SHIPPING OVER ₩50,000</span><span>✦</span><span>BLACK SALE −30%</span><span>✦</span>
+            </div>
+        </div>
         <div class="header">
-            <div class="container">
-                <div class="header_top">
-                    <div class="logo">
-                        <a href="javascript:void(0);"><img src="img/logo.png"></a>
-                    </div>
-                    <ul class="small_menu">
-                        <li><a href="javascript:void(0);">회원가입</a></li>
-                        <li><a href="javascript:void(0);">로그인</a></li>
-                        <li><a href="javascript:void(0);">고객센터</a></li>
-                        <li><a href="javascript:void(0);">마이페이지</a></li>
-                    </ul>
-                </div>
-                <div class="header_bot">
+            <div class="container header-bar">
+                <h1 class="logo">
+                    <a href="javascript:void(0);"><img src="img/logo.png" alt="JUSTYOUNG"></a>
+                </h1>
+                <nav class="gnb">
                     <ul class="top_menu">
                         <li class="main_menu">
                             <a href="javascript:void(0);">남성</a>
@@ -142,34 +149,91 @@
                             </div>
                         </li> -->
                     </ul>
-                    <ul class="top_menu02">
+                </nav>
+                <div class="header-util">
+                    <ul class="util-links">
                         <li><a href="javascript:void(0);">STYLE</a></li>
                         <li><a href="javascript:void(0);">SHOP</a></li>
-                        <li><a href="javascript:void(0);"><img src="img/search_btn.png"></a></li>
-                        <li><a href="javascript:void(0);"><img src="img/cart_btn.png"></a></li>
+                        <li><a href="javascript:void(0);">로그인</a></li>
+                        <li><a href="javascript:void(0);">회원가입</a></li>
+                    </ul>
+                    <ul class="util-icons">
+                        <li><a href="javascript:void(0);" aria-label="검색"><img src="img/search_btn.png" alt="검색"></a></li>
+                        <li><a href="javascript:void(0);" aria-label="장바구니"><img src="img/cart_btn.png" alt="장바구니"></a></li>
                     </ul>
                 </div>
+                <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sideMenu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- 모바일 사이드 메뉴 (드로어) -->
+    <div class="side-dim"></div>
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+        <div class="side-head">
+            <span class="side-logo">JUSTYOUNG</span>
+            <button class="side-close" type="button" aria-label="메뉴 닫기">&times;</button>
+        </div>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="javascript:void(0);">남성</a></li>
+                <li><a href="javascript:void(0);">여성</a></li>
+                <li><a href="javascript:void(0);">아우터</a></li>
+                <li><a href="javascript:void(0);">상의</a></li>
+                <li><a href="javascript:void(0);">하의</a></li>
+                <li><a href="javascript:void(0);">신발</a></li>
+                <li><a href="javascript:void(0);">패션잡화</a></li>
+            </ul>
+        </nav>
+        <ul class="side-util">
+            <li><a href="javascript:void(0);">STYLE</a></li>
+            <li><a href="javascript:void(0);">SHOP</a></li>
+            <li><a href="javascript:void(0);">로그인</a></li>
+            <li><a href="javascript:void(0);">회원가입</a></li>
+        </ul>
+    </aside>
     <main>
         <div class="container">
             <div class="contents">
                 <div class="main_slide">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="javascript:void(0);"><img src="img/banner01.png" alt="x"></a></div>
-                            <div class="swiper-slide"><a href="javascript:void(0);"><img src="img/banner02.png" alt="x"></a></div>
-                            <div class="swiper-slide"><a href="javascript:void(0);"><img src="img/banner03.png" alt="x"></a></div>
+                            <div class="swiper-slide hero-slide">
+                                <img class="hero-bg" src="img/outer07.jpg" alt="">
+                                <div class="hero-inner">
+                                    <p class="hero-eyebrow">2026 F/W COLLECTION</p>
+                                    <h2 class="hero-title">NEW <em>DROP</em></h2>
+                                    <p class="hero-desc">이번 시즌 새로 들어온 아우터 컬렉션</p>
+                                    <a class="hero-cta" href="javascript:void(0);">SHOP NOW</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide hero-slide">
+                                <img class="hero-bg" src="img/topwear07.jpg" alt="">
+                                <div class="hero-inner">
+                                    <p class="hero-eyebrow">STREET ESSENTIALS</p>
+                                    <h2 class="hero-title">DAILY <em>WEAR</em></h2>
+                                    <p class="hero-desc">매일 입기 좋은 베이직 상의 라인업</p>
+                                    <a class="hero-cta" href="javascript:void(0);">SHOP NOW</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide hero-slide">
+                                <img class="hero-bg" src="img/shoes01.jpg" alt="">
+                                <div class="hero-inner">
+                                    <p class="hero-eyebrow">FOOTWEAR DROP</p>
+                                    <h2 class="hero-title">STEP <em>UP</em></h2>
+                                    <p class="hero-desc">스니커즈부터 워커까지, 발끝의 완성</p>
+                                    <a class="hero-cta" href="javascript:void(0);">SHOP NOW</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev" aria-label="이전 슬라이드"></div>
+                        <div class="swiper-button-next" aria-label="다음 슬라이드"></div>
                     </div>
                 </div>
                 <!-- main_slide end -->
-                <div class="banner">
-                    <a href="javascript:void(0);"><p>BLACK FRIDAY</p><span> 3월 블랙세일, 7일간의 혜택</span></a>
-                </div>
-                <!-- banner end -->
                 <div class="item_zone01">
                     <div class="title_text_box">
                         <h4>추천 상품</h4><a href="javascript:void(0);">전체보기</a>
@@ -177,7 +241,7 @@
                     <div class="item_sort_box">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear10.jpg" alt="스포티 반팔 티셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -189,7 +253,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer04.jpg" alt="이너 퍼 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -201,7 +265,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer08.jpg" alt="배색 플리스"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -213,7 +277,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc04.jpg" alt="스몰 백팩"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -225,7 +289,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes05.jpg" alt="화이트 어글리 슈즈"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -237,7 +301,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants09.jpg" alt="다크 데님"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -264,7 +328,7 @@
                     <div class="item_sort_box02 topwear">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear01.jpg" alt="스트라이프 포켓 셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -276,7 +340,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear02.jpg" alt="스트라이프 카라 롱슬리브"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -288,7 +352,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear03.jpg" alt="레이어드 셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -300,7 +364,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear04.jpg" alt="루즈핏 롱 슬리브"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -312,7 +376,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear05.jpg" alt="화이트 배색 와플 니트"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -324,7 +388,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear06.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear06.jpg" alt="니트 조끼"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -336,7 +400,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear07.jpg" alt="시스루 화이트 셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -348,7 +412,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear08.jpg" alt="스포티 롱 슬리브"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -360,7 +424,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear09.jpg" alt="반팔 레이어드 후드"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -372,7 +436,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear10.jpg" alt="스포티 반팔 티셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -387,7 +451,7 @@
                     <div class="item_sort_box02 pants">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants01.jpg" alt="디스트로이드 멀티 포켓 데님"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -399,19 +463,19 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants02.jpg" alt="블랙 진"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>블랙 진</h4>
-                                    <p>색상 : 블랙/p>
+                                    <p>색상 : 블랙</p>
                                     <span>91,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants03.jpg" alt="면 바지"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -423,7 +487,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants04.jpg" alt="라이트 데님"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -435,7 +499,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants05.jpg" alt="커팅 디스트로이드 진"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -447,7 +511,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants06.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants06.jpg" alt="밴딩 팬츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -459,7 +523,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants07.jpg" alt="코듀로이 팬츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -471,7 +535,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants08.jpg" alt="코듀로이 카고 팬츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -483,7 +547,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants09.jpg" alt="다크 데님"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -495,7 +559,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants10.jpg" alt="블랙 슬랙스"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -510,7 +574,7 @@
                     <div class="item_sort_box02 outer">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer01.jpg" alt="브라운 셔츠 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -522,7 +586,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer02.jpg" alt="베이지 세미 레더 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -534,7 +598,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer03.jpg" alt="브라운 레더 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -546,7 +610,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer04.jpg" alt="이너 퍼 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -558,7 +622,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer05.jpg" alt="코듀로이 셔츠 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -570,7 +634,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer06.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer06.jpg" alt="베이직 블랙 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -582,19 +646,19 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer07.jpg" alt="우드톤 무스탕"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>우드톤 무스탕</h4>
-                                    <p>색상 : </p>
+                                    <p>색상 : 브라운</p>
                                     <span>230,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer08.jpg" alt="배색 플리스"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -606,7 +670,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer09.jpg" alt="베이직 플리스"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -618,7 +682,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer10.jpg" alt="배색 윈드스토퍼"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -633,7 +697,7 @@
                     <div class="item_sort_box02 shoes">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes01.jpg" alt="나이키 조던1 브라운"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -645,7 +709,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes02.jpg" alt="블랙 러닝 슈즈"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -657,7 +721,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes03.jpg" alt="블랙 유광 구두"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -669,7 +733,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes04.jpg" alt="블랙 화이트 러닝 슈즈"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -681,7 +745,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes05.jpg" alt="화이트 어글리 슈즈"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -693,7 +757,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes06.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes06.jpg" alt="배색 유광 구두"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -705,7 +769,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes07.jpg" alt="유광 베이직 구두"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -717,7 +781,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes08.jpg" alt="무광 워커"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -729,7 +793,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes09.jpg" alt="라이트 블루 하이 워커"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -741,7 +805,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes10.jpg" alt="컨버스 하이"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -753,11 +817,11 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="item_sort_box02 etc">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc01.jpg" alt="무광 메탈 손목 시계"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -769,7 +833,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc02.jpg" alt="반지갑"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -781,7 +845,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc03.jpg" alt="유광 레더 백팩"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -793,7 +857,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc04.jpg" alt="스몰 백팩"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -805,72 +869,72 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc05.jpg" alt="크로스 체인 목걸이"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>크로스 체인 목걸이</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>31,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc06.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc06.jpg" alt="써지컬 헤드폰 목걸이"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>써지컬 헤드폰 목걸이</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>31,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc07.jpg" alt="데빌 링"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>데빌 링</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>33,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc08.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc08.jpg" alt="농구공 링"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>농구공 링</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>25,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc09.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc09.jpg" alt="멀티 포인트 키링"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>멀티 포인트 키링</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>19,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc10.jpg" alt="체인 브레이슬릿"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>체인 브레이슬릿</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>34,000원</span>
                                 </a>
                             </div>
@@ -885,31 +949,31 @@
                     <div class="item_sort_box03">
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc05.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc05.jpg" alt="크로스 체인 목걸이"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>크로스 체인 목걸이</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>31,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/etc10.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/etc10.jpg" alt="체인 브레이슬릿"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
                                     <h4>체인 브레이슬릿</h4>
-                                    <p>색상 : x</p>
+                                    <p>색상 : 실버</p>
                                     <span>34,000원</span>
                                 </a>
                             </div>
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/outer02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/outer02.jpg" alt="베이지 세미 레더 자켓"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -921,7 +985,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/topwear07.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/topwear07.jpg" alt="시스루 화이트 셔츠"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -933,7 +997,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/shoes01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/shoes01.jpg" alt="나이키 조던1 브라운"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -945,7 +1009,7 @@
                         </div>
                         <div class="item_box">
                             <div class="item_img">
-                                <a href="javascript:void(0);"><img src="img/pants01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/pants01.jpg" alt="디스트로이드 멀티 포켓 데님"></a>
                             </div>
                             <div class="item_text">
                                 <a href="javascript:void(0);">
@@ -965,10 +1029,10 @@
                     <div class="item_sort_box04">
                         <div class="item_box style_box">
                             <div class="profile_circle">
-                                <a href="javascript:void(0);"><img src="img/profile.png"></a>
+                                <a href="javascript:void(0);"><img src="img/profile.png" alt=""></a>
                             </div>
                             <div class="style_img_box">
-                                <a href="javascript:void(0);"><img src="img/style01.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/style01.jpg" alt="유저 스타일 코디 - @ahn_0718"></a>
                             </div>
                             <div class="user_id">
                                 <a href="javascript:void(0);"><p>@ahn_0718</p></a>
@@ -976,10 +1040,10 @@
                         </div>
                         <div class="item_box style_box">
                             <div class="profile_circle">
-                                <a href="javascript:void(0);"><img src="img/profile.png"></a>
+                                <a href="javascript:void(0);"><img src="img/profile.png" alt=""></a>
                             </div>
                             <div class="style_img_box">
-                                <a href="javascript:void(0);"><img src="img/style02.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/style02.jpg" alt="유저 스타일 코디 - @gh_1793"></a>
                             </div>
                             <div class="user_id">
                                 <a href="javascript:void(0);"><p>@gh_1793</p></a>
@@ -987,10 +1051,10 @@
                         </div>
                         <div class="item_box style_box">
                             <div class="profile_circle">
-                                <a href="javascript:void(0);"><img src="img/profile.png"></a>
+                                <a href="javascript:void(0);"><img src="img/profile.png" alt=""></a>
                             </div>
                             <div class="style_img_box">
-                                <a href="javascript:void(0);"><img src="img/style03.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/style03.jpg" alt="유저 스타일 코디 - @abcdefg_eonha"></a>
                             </div>
                             <div class="user_id">
                                 <a href="javascript:void(0);"><p>@abcdefg_eonha</p></a>
@@ -998,10 +1062,10 @@
                         </div>
                         <div class="item_box style_box">
                             <div class="profile_circle">
-                                <a href="javascript:void(0);"><img src="img/profile.png"></a>
+                                <a href="javascript:void(0);"><img src="img/profile.png" alt=""></a>
                             </div>
                             <div class="style_img_box">
-                                <a href="javascript:void(0);"><img src="img/style04.jpg" alt="x"></a>
+                                <a href="javascript:void(0);"><img src="img/style04.jpg" alt="유저 스타일 코디 - @unknown_177"></a>
                             </div>
                             <div class="user_id">
                                 <a href="javascript:void(0);"><p>@unknown_177</p></a>
@@ -1053,26 +1117,27 @@
                             <li><a href="javascript:void(0);" style="font-weight: bold;">개인정보처리방침</a></li>
                         </ul>
                         <ul>
-                            <li><a href="javascript:void(0);"><img src="img/insta.png"></a></li>
-                            <li><a href="javascript:void(0);"><img src="img/fb.png"></a></li>
-                            <li><a href="javascript:void(0);"><img src="img/kt.png"></a></li>
+                            <li><a href="javascript:void(0);" aria-label="인스타그램"><img src="img/insta.png" alt="인스타그램"></a></li>
+                            <li><a href="javascript:void(0);" aria-label="페이스북"><img src="img/fb.png" alt="페이스북"></a></li>
+                            <li><a href="javascript:void(0);" aria-label="카카오톡"><img src="img/kt.png" alt="카카오톡"></a></li>
                         </ul>
                     </div>
                     <div class="footer_txt_box">
-                        <p>캐스퍼 주식회사 · 대표 김창욱사업자등록번호 : 570-88-01618 통신판매업 : 제 2021-성남분당C-0093호</p>
-                        <p>사업장소재지 : 경기도 성남시 분당구 분당내곡로 131 판교테크원 타워1, 7층호스팅 서비스 : 네이버 클라우드 ㈜</p>
+                        <p>저스트영 주식회사 · 대표 안건하 · 사업자등록번호 : 570-88-01618 · 통신판매업 : 제 2021-성남분당C-0093호</p>
+                        <p>사업장소재지 : 경기도 성남시 분당구 분당내곡로 131 판교테크원 타워1, 7층 · 호스팅 서비스 : 네이버 클라우드 ㈜</p>
                     </div>
                     <div class="bot_box">
                         <div class="footer_txt_box">
                             <p style="color: #000; font-weight: bold;">신한은행 채무지급보증 안내</p>
                             <p>당사는 고객님의 현금 결제 금액에 대해 신한은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
                         </div>
-                        <p>저스트영(주)는 통신판매 중개자로서 통신판매의 당사자가 아닙니다. 본 상품은 개별판매자가 등록한 상품으로 상품, 상품정보, 거래에 관한 의무와 책임은 각 판매자에게 있습니다. 단, 이용약관 및 정책, 기타 거래 체결 과정에서 고지하는 내용 등에 따라 검수하고 보증하는 내용에 대한 책임은 크림(주)에 있습니다.</p>
+                        <p>저스트영(주)는 통신판매 중개자로서 통신판매의 당사자가 아닙니다. 본 상품은 개별판매자가 등록한 상품으로 상품, 상품정보, 거래에 관한 의무와 책임은 각 판매자에게 있습니다. 단, 이용약관 및 정책, 기타 거래 체결 과정에서 고지하는 내용 등에 따라 검수하고 보증하는 내용에 대한 책임은 저스트영(주)에 있습니다.</p>
                     </div>
                 </div>
             </div>
         </footer>
         <!-- footer end -->
     </main>
+    <button id="toTop" class="to-top" type="button" aria-label="맨 위로 이동">↑</button>
 </body>
 </html>
